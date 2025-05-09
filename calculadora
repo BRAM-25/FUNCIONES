@@ -1,0 +1,60 @@
+#include <studio.h>
+#include <math.h>
+
+float suma (float a, float b)
+{
+    return a + b;
+}
+
+float restar(float a, float b)
+{
+    return a - b;
+}
+
+float multiplicar(float a, float b)
+{
+    return a * b;
+}
+
+float dividir(float a, float b)
+{
+    return a / b;
+}
+
+float potencia (float a, int b)
+{
+  float res;
+  res = pow (a, b);
+  return (res);
+}
+
+float potencia (float a, float b)
+{
+return (powd (a,b));
+}
+
+float raiz (floata, int b)
+{
+return (sqrt(a,b));
+}
+
+void main()
+{
+  float res;
+  float a,b;
+  int c;
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
