@@ -1,52 +1,134 @@
-#include <studio.h>
+#include <stdio.h>
 #include <math.h>
 
-float suma (float a, float b)
+// Declaración de funciones
+float suma(float a, float b) 
 {
     return a + b;
 }
 
-float restar(float a, float b)
+float resta(float a, float b) 
 {
     return a - b;
 }
 
-float multiplicar(float a, float b)
+float multiplicacion(float a, float b) 
 {
     return a * b;
 }
 
-float dividir(float a, float b)
+float division(float a, float b) 
 {
     return a / b;
 }
 
-float potencia (float a, int b)
+float potencia(float a, int b) 
 {
-  float res;
-  res = pow (a, b);
-  return (res);
+    return pow(a, b);
 }
 
-float potencia (float a, float b)
-{
-return (powd (a,b));
+float potenciaf(float a, float b) 
+{ 
+    return pow(a, b);
 }
 
-float raiz (floata, int b)
-{
-return (sqrt(a,b));
+float raiz(float a, int b) 
+{ 
+    return sqrt(a);
 }
 
-void main()
+int main() 
 {
-  float res;
-  float a,b;
-  int c;
-  
+    float res;
+    float a, b;
+    int c;
+    int op;
 
+    // Menú principal
+    do 
+    {
+        printf("Menú de opciones:\n");
+        printf("1. Suma\n");
+        printf("2. Resta\n");
+        printf("3. Multiplicación\n");
+        printf("4. División\n");
+        printf("5. Potencia\n");
+        printf("6. Raíz cuadrada\n");
+        printf("0. Salir\n");
+        printf("Escoge una opción: ");
+        scanf("%d", &op);
 
+        switch(op) 
+        {
+            case 1:
+                printf("Ingresa dos números: ");
+                scanf("%f %f", &a, &b);
+                res = suma(a, b);
+                printf("Resultado: %.2f\n", res);
+                break;
 
+            case 2:
+                printf("Ingresa dos números: ");
+                scanf("%f %f", &a, &b);
+                res = resta(a, b);
+                printf("Resultado: %.2f\n", res);
+                break;
+
+            case 3:
+                printf("Ingresa dos números: ");
+                scanf("%f %f", &a, &b);
+                res = multiplicacion(a, b);
+                printf("Resultado: %.2f\n", res);
+                break;
+
+            case 4:
+                printf("Ingresa dos números: ");
+                scanf("%f %f", &a, &b);
+                if (b != 0) 
+                {
+                    res = division(a, b);
+                    printf("Resultado: %.2f\n", res);
+                } else 
+                {
+                    printf("Error: división entre cero no permitida.\n");
+                }
+                break;
+
+            case 5:
+                printf("Ingresa la base y el exponente: ");
+                scanf("%f %d", &a, &c);
+                res = potencia(a, c);
+                printf("Resultado: %.2f\n", res);
+                break;
+
+            case 6:
+                printf("Ingresa un número: ");
+                scanf("%f", &a);
+                if (a >= 0) {
+                    res = raiz(a, 2); // el segundo argumento no se usa
+                    printf("Resultado: %.2f\n", res);
+                } else {
+                    printf("Error: no se puede sacar la raíz de un número negativo.\n");
+                }
+                break;
+
+            case 0:
+                printf("Saliendo del programa...\n");
+                break;
+
+            default:
+                printf("Opción inválida.\n");
+                break;
+        }
+
+        printf("\n");
+
+    } 
+    
+    while(op != 0);
+
+    return 0;
+}
 
 
 
